@@ -1,8 +1,8 @@
 # Sky Walker
 
 Sky Walker is an offline-first personal desktop assistant. The repository
-contains the foundation, Qt desktop shell, and local Ollama chat integration.
-Audio and computer automation are scheduled for later milestones.
+contains the foundation, Qt desktop shell, local Ollama chat integration, and
+local voice input/output, controlled desktop tools, and system monitoring.
 
 ## Requirements
 
@@ -33,7 +33,7 @@ not require internet access.
 
 ## Run
 
-From the project folder in PowerShell, run `run`.
+From the project folder in PowerShell, run `.\run`.
 
 The launcher opens the dashboard using the project's virtual environment.
 
@@ -69,3 +69,14 @@ chat, reopen a saved chat, or delete one after confirmation. Data is stored in
 the configured application data directory, outside the repository by default.
 SQLite is provided by Python itself, with no additional platform dependency.
 The database is not encrypted; Windows account permissions protect its files.
+
+Voice setup and the experimental "Hey Sky" listener are documented in
+[`docs/voice.md`](docs/voice.md). Microphone input requires the optional
+`voice` extra and the separately installed local Whisper runtime/model. Spoken
+output uses the built-in Windows speech voice.
+
+Milestone 6 adds the Tools and System Monitor pages. Approve a folder for the
+current session to preview, search and copy files, or launch an approved app
+after confirmation. See [`docs/automation.md`](docs/automation.md) for limits,
+audit logging and emergency stop behavior. Hey Sky is deferred and disabled;
+manual voice recording is available.
